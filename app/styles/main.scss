@@ -1,0 +1,250 @@
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*
+Note: any .css or .scss files included in the 'styles' directory
+will be correctly compiled during `gulp serve` and `gulp`
+ */
+
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$master-font-size: 12px;
+$line-height-ratio: ( 4/3 );
+$master-line-height: $master-font-size * $line-height-ratio;
+$master-delay: .6s;
+$master-padding: 8px;
+$master-max-width: 768px;
+$figurewrapper-padding: 6 * $master-padding;
+$header-top-margin: 128px;
+$header-height: 48px;
+$nav-window-padding: $master-padding;
+$controlArrow-height: 32px;
+$controlArrow-width: $controlArrow-height;
+$navbar-height: $nav-window-padding * 4 + $controlArrow-height * 4;
+
+  @import 'mixins';
+  @import 'vendors';
+  @import 'partials';
+
+html, body {
+  font-family: 'Inconsolata', monospace;
+  margin: 0;
+  padding: 0;
+  line-height: $master-line-height;
+  font-size: $master-font-size;
+  background-color: #000000;
+}
+
+h1,h2,h3,p {
+  margin:$master-line-height 0;
+  padding:0;
+  &:first-child{
+    margin-top:0;
+  }
+  &:last-child{
+    margin-bottom:0;
+  }
+}
+
+h1{
+  font-size: $master-font-size * 2 ;
+  line-height: $master-line-height * 2 ;
+}
+h2{
+  font-size: $master-font-size * 1.5 ;
+  line-height: $master-line-height * 1.5 ;
+}
+
+header {
+  position: absolute;
+  top: $header-top-margin - $master-line-height;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  max-width: $master-max-width;
+  width: 100%;
+  transition: opacity $master-delay / 2;
+  opacity:.2;
+  box-sizing: border-box;
+
+  [class*="fp-viewing-0"] &{
+    opacity: 1;
+  }
+
+  h1 {
+    margin: 0;
+    a,img{
+      display: block;
+      width: auto;
+
+      @include phone {
+        height: auto;
+        width: 100%;
+      }
+
+    }
+    a {
+      position: relative;
+    }
+    img{
+      margin: auto;
+      position:absolute;
+      bottom:0;
+      // max-height:$header-top-margin - $master-line-height - $master-line-height;
+        max-height: $header-height;
+      min-width:32px * 300 / 44; //from desirateW = desirateH * naturalW/naturalH =  ;
+      // @include not-phone {
+      //   max-height: $header-height;
+      // }
+    }
+  }
+
+  @include phone {
+    padding: 0 $figurewrapper-padding;
+  }
+
+}
+main {
+  position: relative;
+  z-index: 0;
+  h1 {
+    position: absolute;
+    top: 8px;
+    left:8px;
+    opacity:.2;
+  }
+}
+section {
+  // &:nth-child(odd) {
+  //   background:blue;
+  // }
+  // &:nth-child(even) {
+  //   background:red;
+  // }
+}
+figure {
+  margin:0;
+  box-sizing: border-box;
+  // opacity: 0;
+  transition: opacity $master-delay * 1.5;
+  position: relative;
+  section.active &.active{
+    // opacity: 1;
+    // transition: opacity $master-delay * 1.5 $master-delay * 1.5;
+  }
+  // &:nth-child(odd) {
+  //   background:rgba(#fff, .3);
+  // }
+  // &:nth-child(even) {
+  //   background:rgba(#000, .3);
+  // }
+  .imgwrapper{
+    display: block;
+    position:absolute;
+    top:$header-top-margin;
+    bottom: $navbar-height;
+    // bottom: $figurewrapper-padding;
+    // left: 50%;
+    // transform: translateX(-50%);
+    // left: $figurewrapper-padding;
+    // right: $figurewrapper-padding;
+    left: $master-padding;
+    right: $master-padding;
+    @include not-phone {
+      left: $figurewrapper-padding;
+      right: $figurewrapper-padding;
+    }
+    // max-width: $master-max-width;
+    width: auto;
+    margin: 0 auto;
+    overflow: hidden;
+
+    // @include phone {
+    //   top: ($header-top-margin / 2) + $header-height + $master-padding;
+    // }
+  }
+  img{
+    display:block;
+    background-color: rgba(0,0,0,.1);
+    &.portrait {
+     height:100%;
+     width:auto;
+     margin: auto;
+    }
+    &.landscape {
+      width:100%;
+      height:auto !important; //bugfix perfect square image (both .landscape and .portrait)
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      // padding-bottom: $header-top-margin + $header-height + $master-padding - $figurewrapper-padding;
+      //
+      // @include phone {
+      //   padding-top: ($header-top-margin / 2) + $header-height + $master-padding - $figurewrapper-padding;
+      // }
+    }
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      // background-color: green;
+    }
+  }
+  .figwrapper {
+    position: relative;
+    padding: $figurewrapper-padding;
+    // .manifest &{
+    //   padding-left: $figurewrapper-padding;
+    //   padding-right: $figurewrapper-padding;
+    // }
+    // padding-top: $header-top-margin + $header-height + $master-padding;
+    padding-top: $header-top-margin;
+    padding-bottom: $navbar-height;
+    max-width: $master-max-width + ( $figurewrapper-padding * 2 );
+    height: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    @include phone {
+      // padding-top: ($header-top-margin / 2) + $header-height + $master-padding;
+      padding-top: $header-top-margin;
+    }
+  }
+  figcaption{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-left: $figurewrapper-padding;
+    padding-right: $figurewrapper-padding;
+    padding-top: $header-top-margin;
+    padding-bottom: $navbar-height;
+    opacity: 0;
+    transition: opacity $master-delay;
+
+    // @include phone {
+    //   padding-top: ($header-top-margin / 2) + $header-height + $master-padding;
+    // }
+    &.active{
+      opacity: 1;
+    }
+  }
+}

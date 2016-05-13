@@ -1,0 +1,83 @@
+{
+  "manifest": {
+    "color": "#FF0000",
+    "content": [
+      {
+        "title": "About",
+        "layus": "<p>Topping sugar plum macaroon liquorice cookie. Pastry chocolate gingerbread tiramisu cake tootsie roll soufflé dragée sesame snaps.</p>"
+      },
+      {
+        "title": "Contact",
+        "layus": "<p>C.D.<br />Marshmallow powder.<br />sendme@mail.ok<br />+41 567 789 654<br /></p>"
+      }
+    ]
+  },
+  "galleries": [
+    {
+      "hue": 134,
+      "lightness": 0.5,
+      "pictures": [
+        {
+          "captions" : [
+              ["title", "CollectionName"],
+              ["title", "Lux"],
+              ["layus", "Jelly tootsie roll caramels fruitcake chocolate cake chupa chups croissant. Toffee bonbon cookie jelly beans pie pastry. Tart cotton candy cookie wafer liquorice pie pie candy. Gummies sweet roll chocolate bar. Pastry marzipan topping tart jelly beans pudding. Carrot cake biscuit chocolate bar."]
+          ],
+          "path": "http://www.loremimages.com?size=600x400&bg=000000&fg=fff&text=...&format=png",
+          "format": "landscape"
+        },
+        {
+          "captions" : [
+              ["title", "CollectionName"],
+              ["title", "Lux"],
+              ["layus", "Jelly tootsie roll caramels fruitcake chocolate cake chupa chups croissant. Toffee bonbon cookie jelly beans pie pastry. Tart cotton candy cookie wafer liquorice pie pie candy. Gummies sweet roll chocolate bar. Pastry marzipan topping tart jelly beans pudding. Carrot cake biscuit chocolate bar."]
+          ],
+          "path": "http://www.loremimages.com?size=400x700&bg=000000&fg=fff&text=...&format=png",
+          "format": "portrait"
+        },
+        {
+          "captions" : [
+              ["title", "CollectionName"],
+              ["title", "Lux"],
+              ["layus", "Jelly tootsie roll caramels fruitcake chocolate cake chupa chups croissant. Toffee bonbon cookie jelly beans pie pastry. Tart cotton candy cookie wafer liquorice pie pie candy. Gummies sweet roll chocolate bar. Pastry marzipan topping tart jelly beans pudding. Carrot cake biscuit chocolate bar."]
+          ],
+          "path": "http://www.loremimages.com?size=400x300&bg=000000&fg=fff&text=...&format=png",
+          "format": "landscape"
+        }
+      ]
+    },
+    {
+      "hue": 120,
+      "lightness": 0.2,
+      "pictures": [
+        {
+          "captions" : [
+              ["title", "CollectionName"],
+              ["title", "Lux"],
+              ["layus", "Jelly tootsie roll caramels fruitcake chocolate cake chupa chups croissant. Toffee bonbon cookie jelly beans pie pastry. Tart cotton candy cookie wafer liquorice pie pie candy. Gummies sweet roll chocolate bar. Pastry marzipan topping tart jelly beans pudding. Carrot cake biscuit chocolate bar."]
+          ],
+          "path": "http://www.loremimages.com?size=600x400&bg=ffffff&fg=000&text=...&format=png",
+          "format": "landscape"
+        },
+        {
+          "captions" : [
+              ["title", "CollectionName"],
+              ["title", "Lux"],
+              ["layus", "Jelly tootsie roll caramels fruitcake chocolate cake chupa chups croissant. Toffee bonbon cookie jelly beans pie pastry. Tart cotton candy cookie wafer liquorice pie pie candy. Gummies sweet roll chocolate bar. Pastry marzipan topping tart jelly beans pudding. Carrot cake biscuit chocolate bar."]
+          ],
+          "path": "http://www.loremimages.com?size=400x700&bg=ffffff&fg=000&text=...&format=png",
+          "format": "portrait"
+        },
+        {
+          "captions" : [
+              ["title", "CollectionName"],
+              ["title", "Lux"],
+              ["layus", "Jelly tootsie roll caramels fruitcake chocolate cake chupa chups croissant. Toffee bonbon cookie jelly beans pie pastry. Tart cotton candy cookie wafer liquorice pie pie candy. Gummies sweet roll chocolate bar. Pastry marzipan topping tart jelly beans pudding. Carrot cake biscuit chocolate bar."]
+          ],
+          "path": "http://www.loremimages.com?size=400x300&bg=ffffff&fg=000&text=...&format=png",
+          "format": "landscape"
+        }
+      ]
+    }
+  ]
+}
